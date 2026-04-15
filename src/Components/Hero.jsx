@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="md:min-h-screen flex items-center px-6 py-10 md:py-20"
+      className="md:min-h-screen flex items-center px-6 py-20"
       style={{
         background: "linear-gradient(135deg, #f6efe7, #e9eef2, #efe6dd)",
       }}
