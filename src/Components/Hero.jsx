@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center px-6 py-10 md:py-20"
+      className="md:min-h-screen flex items-center px-6 py-10 md:py-20"
       style={{
         background: "linear-gradient(135deg, #f6efe7, #e9eef2, #efe6dd)",
       }}
@@ -19,7 +19,7 @@ const Hero = () => {
         >
           {/* IMAGE BOX */}
           <div
-            className="w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-3xl shadow-md overflow-hidden"
+            className="rounded-3xl shadow-md overflow-hidden"
             style={{
               background: "linear-gradient(135deg, #e9e0d6, #f2ebe4)",
             }}
@@ -65,7 +65,7 @@ const Hero = () => {
             className="tracking-widest text-[11px] sm:text-xs"
             style={{ color: "#7a6a5a" }}
           >
-            GRAPHICS DESIGNER
+            CREATIVE GRAPHICS DESIGNER • BRANDING SPECIALIST
           </motion.p>
 
           <motion.h1
@@ -76,7 +76,7 @@ const Hero = () => {
             style={{ color: "#5f5146" }}
           >
             Hi, I’m <span style={{ color: "#9a8572" }}>Ryan Mitchell</span>
-            <br />I Design Modern Visual Experiences
+            <br />I Build Modern Visual Identities That Grow Brands
           </motion.h1>
 
           <motion.p
@@ -86,9 +86,9 @@ const Hero = () => {
             className="mt-4 text-xs sm:text-sm md:text-base leading-relaxed max-w-md"
             style={{ color: "#7a6a5a" }}
           >
-            I create clean and modern graphic designs including logos, posters,
-            branding identity and social media creatives that help brands grow
-            visually.
+            I design high-impact logos, branding systems, social media kits and
+            marketing visuals that help businesses stand out in a competitive
+            digital world.
           </motion.p>
 
           {/* BUTTONS */}
