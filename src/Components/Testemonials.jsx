@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
+import Title from "../Utils/Title";
 
 const Testimonials = () => {
   const reviews = [
@@ -24,34 +25,20 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-24 px-6"
-      style={{
-        background: "linear-gradient(135deg, #f6efe7, #e9eef2, #efe6dd)",
-      }}
+      className="py-24 px-6 bg-[#f6efe7] dark:bg-[#181512]"
     >
       <div className="max-w-6xl mx-auto">
-
         {/* HEADER */}
-        <div className="text-center mb-14">
-          <p className="tracking-widest text-xs sm:text-sm" style={{ color: "#7a6a5a" }}>
-            TESTIMONIALS
-          </p>
-
-          <h2
-            className="mt-3 font-bold text-[26px] sm:text-[36px] md:text-[44px]"
-            style={{ color: "#5f5146" }}
-          >
-            What Clients Say
-          </h2>
-
-          <p className="mt-4 text-sm sm:text-base max-w-xl mx-auto" style={{ color: "#7a6a5a" }}>
-            Feedback from happy clients I have worked with across different design projects.
-          </p>
-        </div>
+        <Title
+          title={"What Clients Say"}
+          subtitle={
+            "Feedback from happy clients I have worked with across different design projects."
+          }
+          head={"TESTIMONIALS"}
+        />
 
         {/* GRID */}
         <div className="grid md:grid-cols-3 gap-6">
-
           {reviews.map((item, index) => (
             <motion.div
               key={index}
@@ -59,45 +46,44 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.03 }}
-              className="p-6 relative shadow-md"
-              style={{
-                background: "rgba(240, 230, 220, 0.7)",
-                backdropFilter: "blur(10px)",
-                borderRadius: "30px 10px 30px 10px",
-              }}
+              className="
+    p-6 relative shadow-md
+    bg-[#f0e6dc]/70 dark:bg-[#2a221d]/80
+    backdrop-blur-md
+    border border-[#e3d8cc] dark:border-[#3a2f28]
+    rounded-[50px_10px_50px_10px]
+  "
             >
-
               {/* QUOTE ICON */}
-              <FaQuoteLeft
-                className="text-xl mb-4"
-                style={{ color: "#8b7b6b" }}
-              />
+              <FaQuoteLeft className="text-xl mb-4 text-[#8b7b6b] dark:text-[#c4b19d]" />
 
               {/* TEXT */}
-              <p className="text-sm leading-relaxed" style={{ color: "#7a6a5a" }}>
+              <p className="text-sm leading-relaxed text-[#7a6a5a] dark:text-[#c4b19d]">
                 {item.text}
               </p>
 
               {/* STAR */}
               <div className="flex gap-1 mt-4">
                 {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} style={{ color: "#d8c9b8", fontSize: "12px" }} />
+                  <FaStar
+                    key={i}
+                    className="text-[#d8c9b8] dark:text-[#b89e82]"
+                    style={{ fontSize: "12px" }}
+                  />
                 ))}
               </div>
 
               {/* NAME */}
               <div className="mt-4">
-                <h4 className="text-sm font-semibold" style={{ color: "#5f5146" }}>
+                <h4 className="text-sm font-semibold text-[#5f5146] dark:text-[#f2e7da]">
                   {item.name}
                 </h4>
-                <p className="text-xs" style={{ color: "#8b7b6b" }}>
+                <p className="text-xs text-[#8b7b6b] dark:text-[#b8a28d]">
                   {item.role}
                 </p>
               </div>
-
             </motion.div>
           ))}
-
         </div>
       </div>
     </section>

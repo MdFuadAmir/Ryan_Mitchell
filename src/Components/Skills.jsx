@@ -9,6 +9,7 @@ import {
   FaImage,
   FaBezierCurve,
 } from "react-icons/fa";
+import Title from "../Utils/Title";
 
 const Skills = () => {
   const skills = [
@@ -31,42 +32,22 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-24 px-6"
-      style={{
-        background: "linear-gradient(135deg, #f6efe7, #e9eef2, #efe6dd)",
-      }}
+      className="py-24 md:py-28 px-6 bg-[#f6efe7] dark:bg-[#181512]"
     >
       <div className="max-w-6xl mx-auto">
         {/* HEADER */}
-        <div className="text-center mb-14">
-          <p
-            className="tracking-widest text-xs sm:text-sm"
-            style={{ color: "#7a6a5a" }}
-          >
-            SKILLS & TOOLS
-          </p>
-
-          <h2
-            className="mt-3 font-bold text-[26px] sm:text-[36px] md:text-[44px]"
-            style={{ color: "#5f5146" }}
-          >
-            My Creative Expertise
-          </h2>
-
-          <p
-            className="mt-4 text-sm sm:text-base max-w-xl mx-auto"
-            style={{ color: "#7a6a5a" }}
-          >
-            I use modern design tools and creative skills to build strong visual
-            identities and engaging digital experiences.
-          </p>
-        </div>
+        <Title
+          head={"SKILLS & TOOLS"}
+          title={"My Creative Expertise"}
+          subtitle={`I use modern design tools and creative skills to build strong visual
+            identities and engaging digital experiences.`}
+        />
 
         {/* CONTENT GRID */}
         <div className="grid md:grid-cols-2 gap-10">
           {/* SKILLS */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold" style={{ color: "#5f5146" }}>
+            <h3 className="text-lg font-semibold text-[#5f5146] dark:text-[#f2e7da]">
               Design Skills
             </h3>
 
@@ -75,33 +56,26 @@ const Skills = () => {
                 key={index}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                className="p-4"
+                className="p-4 bg-[#f0e6dc] dark:bg-[#24201c]"
                 style={{
-                  background: "#f0e6dc",
                   borderRadius: "30px 10px 30px 10px",
                 }}
               >
                 <div className="flex justify-between mb-2">
-                  <span
-                    className="text-sm font-medium"
-                    style={{ color: "#5f5146" }}
-                  >
+                  <span className="text-sm font-medium text-[#5f5146] dark:text-[#f2e7da]">
                     {skill.name}
                   </span>
-                  <span className="text-xs" style={{ color: "#7a6a5a" }}>
+                  <span className="text-xs text-[#7a6a5a] dark:text-[#b8a28d]">
                     {skill.level}%
                   </span>
                 </div>
 
-                <div className="w-full h-2 bg-white/40 rounded-full overflow-hidden">
+                <div className="w-full h-2 bg-white/40 dark:bg-[#3a3128] rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
                     transition={{ duration: 1 }}
-                    className="h-full rounded-full"
-                    style={{
-                      background: "linear-gradient(90deg, #e3d8cc, #d8c9b8)",
-                    }}
+                    className="h-full rounded-full bg-[#d8c9b8] dark:bg-[#b89e82]"
                   />
                 </div>
               </motion.div>
@@ -110,10 +84,7 @@ const Skills = () => {
 
           {/* TOOLS */}
           <div>
-            <h3
-              className="text-lg font-semibold mb-6"
-              style={{ color: "#5f5146" }}
-            >
+            <h3 className="text-lg font-semibold mb-6 text-[#5f5146] dark:text-[#f2e7da]">
               Tools I Use
             </h3>
 
@@ -122,27 +93,23 @@ const Skills = () => {
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05 }}
-                  className="p-4 flex flex-col items-center justify-center gap-2 cursor-pointer"
+                  className="p-4 flex flex-col items-center justify-center gap-2 cursor-pointer bg-[#e3d8cc] dark:bg-[#2a241f]"
                   style={{
-                    background: "#e3d8cc",
                     borderRadius: "25px 8px 25px 8px",
                   }}
                 >
-                  <div className="text-xl" style={{ color: "#5f5146" }}>
+                  <div className="text-xl text-[#5f5146] dark:text-[#d2c0ad]">
                     {tool.icon}
                   </div>
-                  <p
-                    className="text-xs text-center"
-                    style={{ color: "#7a6a5a" }}
-                  >
+
+                  <p className="text-xs text-center text-[#7a6a5a] dark:text-[#c4b19d]">
                     {tool.name}
                   </p>
                 </motion.div>
               ))}
             </div>
 
-            {/* EXTRA LINE */}
-            <p className="mt-6 text-sm" style={{ color: "#7a6a5a" }}>
+            <p className="mt-6 text-sm text-[#7a6a5a] dark:text-[#c4b19d]">
               I continuously explore new tools to improve my creative workflow
               and design quality.
             </p>

@@ -9,23 +9,22 @@ import {
 import Logo from "../Utils/Logo";
 
 const Footer = () => {
+  const navLinks = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "services", label: "Services" },
+    { id: "portfolio", label: "Portfolio" },
+    { id: "contact", label: "Contact" },
+  ];
   return (
-    <footer
-      className="px-6 pt-20 pb-10"
-      style={{
-        background: "linear-gradient(135deg, #efe6dd, #e9eef2)",
-      }}
-    >
-      <div className="max-w-6xl mx-auto">
+    <footer className="px-6 pt-20 pb-10 bg-[#e6ddd4] dark:bg-[#120f0d] transition-colors duration-300 border-t border-[#d4c2af] dark:border-[#2f2722]">
+      <div className="max-w-6xl mx-auto relative">
         {/* TOP GRID */}
-        <div className="grid md:grid-cols-4 gap-10">
+        <div className="grid md:grid-cols-3 gap-10">
           {/* BRAND */}
           <div>
             <Logo />
-            <p
-              className="mt-4 text-sm leading-relaxed"
-              style={{ color: "#7a6a5a" }}
-            >
+            <p className="mt-4 text-sm leading-relaxed text-[#7a6a5a] dark:text-[#c4b19d]">
               Creative graphics designer focused on building modern, clean and
               visually strong brand experiences.
             </p>
@@ -37,11 +36,7 @@ const Footer = () => {
                   <motion.div
                     key={i}
                     whileHover={{ scale: 1.1 }}
-                    className="p-3 rounded-full cursor-pointer"
-                    style={{
-                      background: "#e3d8cc",
-                      color: "#5f5146",
-                    }}
+                    className="p-3 rounded-full cursor-pointer bg-[#d8c9b8] dark:bg-[#2a241f] text-[#5f5146] dark:text-[#f2e7da] transition-colors duration-300"
                   >
                     <Icon size={14} />
                   </motion.div>
@@ -52,50 +47,18 @@ const Footer = () => {
 
           {/* LINKS */}
           <div>
-            <h3
-              className="text-sm font-semibold mb-4"
-              style={{ color: "#5f5146" }}
-            >
+            <h3 className="text-sm font-semibold mb-4 text-[#5f5146] dark:text-[#f2e7da]">
               Quick Links
             </h3>
-
             <ul className="space-y-2 text-sm">
-              {["Home", "About", "Services", "Portfolio", "Contact"].map(
-                (item, i) => (
-                  <li
-                    key={i}
-                    className="cursor-pointer hover:translate-x-1 transition"
-                    style={{ color: "#7a6a5a" }}
+              {navLinks.map((item, i) => (
+                <li key={i}>
+                  <a
+                    href={`#${item.id}`}
+                    className="cursor-pointer hover:translate-x-1 inline-block transition text-[#7a6a5a] dark:text-[#c4b19d]"
                   >
-                    {item}
-                  </li>
-                ),
-              )}
-            </ul>
-          </div>
-
-          {/* SERVICES */}
-          <div>
-            <h3
-              className="text-sm font-semibold mb-4"
-              style={{ color: "#5f5146" }}
-            >
-              Services
-            </h3>
-
-            <ul className="space-y-2 text-sm">
-              {[
-                "Logo Design",
-                "Brand Identity",
-                "Social Media Design",
-                "Packaging Design",
-              ].map((item, i) => (
-                <li
-                  key={i}
-                  className="hover:translate-x-1 transition"
-                  style={{ color: "#7a6a5a" }}
-                >
-                  {item}
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -103,30 +66,33 @@ const Footer = () => {
 
           {/* CONTACT INFO */}
           <div>
-            <h3
-              className="text-sm font-semibold mb-4"
-              style={{ color: "#5f5146" }}
-            >
+            <h3 className="text-sm font-semibold mb-4 text-[#5f5146] dark:text-[#f2e7da]">
               Contact
             </h3>
 
-            <p className="text-sm" style={{ color: "#7a6a5a" }}>
+            <p className="text-sm text-[#7a6a5a] dark:text-[#c4b19d]">
               mdfuadamir@gmail.com
             </p>
 
-            <p className="text-sm mt-2" style={{ color: "#7a6a5a" }}>
+            <p className="text-sm mt-2 text-[#7a6a5a] dark:text-[#c4b19d]">
               Available for freelance projects worldwide.
             </p>
 
             {/* CTA */}
             <motion.a
-              whileHover={{ scale: 1.05 }}
               href="#contact"
-              className="inline-block mt-4 px-4 py-2 rounded-full text-xs"
-              style={{
-                background: "#d8c9b8",
-                color: "#5f5146",
+              onClick={() => {
+                const textarea = document.querySelector(
+                  'textarea[name="message"]',
+                );
+                if (textarea) {
+                  textarea.value =
+                    "I’d like to collaborate on a design project that elevates my brand with modern and impactful visuals.";
+                  textarea.dispatchEvent(new Event("input", { bubbles: true }));
+                }
               }}
+              whileHover={{ scale: 1.05 }}
+              className="inline-block mt-4 px-4 py-2 rounded-full text-xs bg-[#cdb8a3] dark:bg-[#3a3128] text-[#5f5146] dark:text-[#f2e7da] transition-colors duration-300"
             >
               Start a Project
             </motion.a>
@@ -134,14 +100,9 @@ const Footer = () => {
         </div>
 
         {/* BOTTOM */}
-        <div
-          className="mt-16 pt-6 text-center text-xs border-t"
-          style={{
-            borderColor: "#d8c9b8",
-            color: "#8b7b6b",
-          }}
-        >
-          © 2026 Md Fuad Amir. All rights reserved.
+        <div className="mt-16 pt-8 text-center text-xs border-t border-[#cdb8a3] dark:border-[#352c26] text-[#8b7b6b] dark:text-[#b8a28d]">
+          Copyright © {new Date().getFullYear()} Md Fuad Amir. All rights
+          reserved.
         </div>
       </div>
     </footer>

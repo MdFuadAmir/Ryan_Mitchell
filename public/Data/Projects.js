@@ -1,0 +1,133 @@
+import img1 from "../../src/assets/Images/p1.webP";
+import img2 from "../../src/assets/Images/p2.webP";
+import img3 from "../../src/assets/Images/p3.webP";
+import img4 from "../../src/assets/Images/p6.webP";
+import img5 from "../../src/assets/Images/p5.webP";
+import img6 from "../../src/assets/Images/p4.webP";
+
+const  projects = [
+  {
+    id: 1,
+    img: img1,
+    title: "Brand Identity Design",
+    category: "Logo & Branding",
+    client: "NovaTech Studio",
+    year: "2025",
+    duration: "2 Weeks",
+    desc: "Complete brand system with logo, typography and visual identity direction.",
+    longDesc:
+      "This project focused on building a strong visual identity system including logo design, typography system, color psychology and brand guidelines for consistent usage across all platforms.",
+    tools: ["Photoshop", "Illustrator"],
+    role: "Lead Brand Designer",
+    liveLink: "#",
+    caseStudyLink: "/project/brand-identity",
+    tags: ["branding", "logo", "identity"],
+    challenge:
+      "Client needed a modern identity that reflects innovation and trust.",
+    solution:
+      "Created a minimal yet bold identity system with scalable design language.",
+    result: "Improved brand recognition and increased engagement by 40%.",
+  },
+  {
+    id: 2,
+    img: img2,
+    title: "Social Media Campaign",
+    category: "Marketing Design",
+    client: "Glow Marketing Agency",
+    year: "2025",
+    duration: "1 Week",
+    desc: "Engaging creatives designed for high conversion and brand awareness.",
+    longDesc:
+      "A high-performing social media campaign designed to boost engagement using modern layouts, typography hierarchy and strong call-to-action visuals.",
+    tools: ["Figma", "Photoshop"],
+    role: "Visual Designer",
+    liveLink: "#",
+    caseStudyLink: "/project/social-campaign",
+    tags: ["social media", "ads", "marketing"],
+    challenge: "Low engagement on social platforms.",
+    solution: "Designed scroll-stopping visuals with strong hierarchy.",
+    result: "Engagement increased by 65%.",
+  },
+  {
+    id: 3,
+    img: img3,
+    title: "Modern Logo Concept",
+    category: "Logo Design",
+    client: "Freelance Startup",
+    year: "2024",
+    duration: "3 Days",
+    desc: "Minimal logo concept built with strong brand psychology.",
+    longDesc:
+      "A minimal logo design focused on typography balance and symbolic representation for a modern startup identity.",
+    tools: ["Illustrator"],
+    role: "Logo Designer",
+    liveLink: "#",
+    caseStudyLink: "/project/logo-concept",
+    tags: ["logo", "minimal", "branding"],
+    challenge: "Client wanted a simple but meaningful logo.",
+    solution: "Created a geometric minimal mark with hidden symbolism.",
+    result: "Strong brand recall and recognition improvement.",
+  },
+  {
+    id: 4,
+    img: img4,
+    title: "Product Packaging Design",
+    category: "Packaging Design",
+    client: "Fresh Organics",
+    year: "2025",
+    duration: "10 Days",
+    desc: "Premium packaging focused on shelf impact and storytelling.",
+    longDesc:
+      "Designed a premium packaging system that enhances shelf visibility and communicates organic product values effectively.",
+    tools: ["Illustrator", "Photoshop"],
+    role: "Packaging Designer",
+    liveLink: "#",
+    caseStudyLink: "/project/packaging",
+    tags: ["packaging", "product", "branding"],
+    challenge: "Product was not standing out in retail shelves.",
+    solution: "Created bold minimal packaging with earthy tones.",
+    result: "Sales increased significantly after redesign.",
+  },
+  {
+    id: 5,
+    img: img5,
+    title: "Creative Poster Design",
+    category: "Print Design",
+    client: "Event Hub BD",
+    year: "2024",
+    duration: "4 Days",
+    desc: "Eye-catching posters for promotions and campaigns.",
+    longDesc:
+      "A series of promotional posters designed for digital and print media with strong visual hierarchy and bold typography.",
+    tools: ["Photoshop"],
+    role: "Graphic Designer",
+    liveLink: "#",
+    caseStudyLink: "/project/poster-design",
+    tags: ["poster", "print", "ads"],
+    challenge: "Need attention-grabbing promotional material.",
+    solution: "Used bold typography and contrast-driven layouts.",
+    result: "Event engagement increased by 50%.",
+  },
+  {
+    id: 6,
+    img: img6,
+    title: "Digital Ads Design",
+    category: "Advertising",
+    client: "AdVision Agency",
+    year: "2025",
+    duration: "1 Week",
+    desc: "High-performance ad creatives for marketing campaigns.",
+    longDesc:
+      "Designed digital advertising creatives optimized for conversion and engagement across social media platforms.",
+    tools: ["Figma", "Photoshop"],
+    role: "Ad Designer",
+    liveLink: "#",
+    caseStudyLink: "/project/digital-ads",
+    tags: ["ads", "marketing", "digital"],
+    challenge: "Low CTR in ad campaigns.",
+    solution: "Improved visual hierarchy and CTA placement.",
+    result: "CTR increased by 70%.",
+  },
+];
+
+export default projects;

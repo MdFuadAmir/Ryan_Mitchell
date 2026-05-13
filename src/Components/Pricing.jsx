@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa";
+import Title from "../Utils/Title";
 
 const Pricing = () => {
   const plans = [
@@ -13,6 +14,9 @@ const Pricing = () => {
         "Basic Quality Design",
         "2 Revisions",
         "JPG/PNG Files",
+        "Responsive Layout",
+        "Basic Support",
+        "3 Days Delivery",
       ],
     },
     {
@@ -26,6 +30,9 @@ const Pricing = () => {
         "5 Revisions",
         "Source File Included",
         "Fast Delivery",
+        "Priority Email Support",
+        "Commercial Use",
+        "Custom Branding",
       ],
     },
     {
@@ -38,6 +45,9 @@ const Pricing = () => {
         "Unlimited Revisions",
         "All File Formats",
         "Priority Support",
+        "Brand Strategy",
+        "Lifetime File Access",
+        "Express Delivery",
       ],
     },
   ];
@@ -45,37 +55,20 @@ const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="py-24 px-6"
-      style={{
-        background: "linear-gradient(135deg, #f6efe7, #e9eef2, #efe6dd)",
-      }}
+      className="py-24 md:py-28 px-6 bg-[#f6efe7] dark:bg-[#181512]"
     >
       <div className="max-w-6xl mx-auto">
-
-        {/* HEADER */}
-        <div className="text-center mb-14">
-          <p className="tracking-widest text-xs sm:text-sm" style={{ color: "#7a6a5a" }}>
-            PRICING
-          </p>
-
-          <h2
-            className="mt-3 font-bold text-[26px] sm:text-[36px] md:text-[44px]"
-            style={{ color: "#5f5146" }}
-          >
-            Simple Pricing Plans
-          </h2>
-
-          <p
-            className="mt-4 text-sm sm:text-base max-w-xl mx-auto"
-            style={{ color: "#7a6a5a" }}
-          >
-            Choose a plan that fits your design needs and budget.
-          </p>
-        </div>
+        {/* Reusable Title */}
+        <Title
+          head={"PRICING"}
+          title={"Simple Pricing Plans"}
+          subtitle={
+            "Choose a flexible pricing plan designed to match your creative goals, project scope, and business needs."
+          }
+        />
 
         {/* CARDS */}
-        <div className="grid md:grid-cols-3 gap-8">
-
+        <div className="grid md:grid-cols-3 gap-8 mt-14">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -83,54 +76,44 @@ const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ scale: plan.popular ? 1.05 : 1.03 }}
               viewport={{ once: true }}
-              className="p-6 relative shadow-md"
-              style={{
-                background: plan.popular ? "#e3d8cc" : "#f0e6dc",
-                borderRadius: "30px 10px 30px 10px",
-              }}
+              className={`
+                p-6 relative shadow-md rounded-[30px_10px_30px_10px]
+                ${
+                  plan.popular
+                    ? "bg-[#e3d8cc] dark:bg-[#312821]"
+                    : "bg-[#f0e6dc] dark:bg-[#24201c]"
+                }
+              `}
             >
-
               {/* POPULAR TAG */}
               {plan.popular && (
-                <span
-                  className="absolute -top-3 left-6 text-xs px-3 py-1 rounded-full"
-                  style={{
-                    background: "#ffffffcc",
-                    color: "#5f5146",
-                  }}
-                >
+                <span className="absolute -top-3 left-6 text-xs px-3 py-1 rounded-full bg-[#ffffffcc] dark:bg-[#3b3128] text-[#5f5146] dark:text-[#f2e7da]">
                   Most Popular
                 </span>
               )}
 
               {/* TITLE */}
-              <h3
-                className="text-lg font-semibold"
-                style={{ color: "#5f5146" }}
-              >
+              <h3 className="text-lg font-semibold text-[#5f5146] dark:text-[#f2e7da]">
                 {plan.name}
               </h3>
 
               {/* PRICE */}
-              <h2
-                className="text-3xl font-bold mt-2"
-                style={{ color: "#5f5146" }}
-              >
+              <h2 className="text-3xl font-bold mt-2 text-[#5f5146] dark:text-[#f2e7da]">
                 {plan.price}
               </h2>
 
-              <p
-                className="text-sm mt-2"
-                style={{ color: "#7a6a5a" }}
-              >
+              <p className="text-sm mt-2 text-[#7a6a5a] dark:text-[#c4b19d]">
                 {plan.desc}
               </p>
 
               {/* FEATURES */}
               <ul className="mt-6 space-y-3">
                 {plan.features.map((item, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm" style={{ color: "#7a6a5a" }}>
-                    <FaCheck style={{ color: "#8b7b6b" }} />
+                  <li
+                    key={i}
+                    className="flex items-center gap-2 text-sm text-[#7a6a5a] dark:text-[#c4b19d]"
+                  >
+                    <FaCheck className="text-[#8b7b6b] dark:text-[#d2c0ad]" />
                     {item}
                   </li>
                 ))}
@@ -138,18 +121,37 @@ const Pricing = () => {
 
               {/* BUTTON */}
               <button
-                className="mt-8 w-full py-2.5 rounded-full text-sm cursor-pointer"
-                style={{
-                  background: "#d8c9b8",
-                  color: "#5f5146",
+                onClick={() => {
+                  const textarea = document.querySelector(
+                    'textarea[name="message"]',
+                  );
+
+                  if (textarea) {
+                    const message = `
+I want to choose the ${plan.name} plan.
+
+Price: ${plan.price}
+
+Included Features:
+${plan.features.map((f) => `- ${f}`).join("\n")}
+
+Please let me know how we can proceed.
+      `.trim();
+                    textarea.value = message;
+                    textarea.dispatchEvent(
+                      new Event("input", { bubbles: true }),
+                    );
+                  }
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
+                className="mt-8 w-full py-2.5 rounded-full text-sm cursor-pointer bg-[#d8c9b8] dark:bg-[#4a3d33] text-[#5f5146] dark:text-[#f2e7da] hover:scale-105 transition"
               >
                 Choose Plan
               </button>
-
             </motion.div>
           ))}
-
         </div>
       </div>
     </section>

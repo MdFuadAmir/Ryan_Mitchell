@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaPenNib, FaPalette, FaBullhorn, FaCube } from "react-icons/fa";
+import Title from "../Utils/Title";
 
 const Services = () => {
-
   const services = [
     {
       icon: <FaPenNib />,
@@ -34,36 +34,18 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="py-24 px-6"
-      style={{
-        background: "linear-gradient(135deg, #f6efe7, #e9eef2, #efe6dd)",
-      }}
+      className="py-24 md:py-28 px-6 bg-[#f6efe7] dark:bg-[#181512]"
     >
       <div className="max-w-6xl mx-auto">
         {/* HEADER */}
-        <div className="text-center mb-14">
-          <p
-            className="tracking-widest text-xs sm:text-sm"
-            style={{ color: "#7a6a5a" }}
-          >
-            SERVICES
-          </p>
 
-          <h2
-            className="mt-3 font-bold text-[26px] sm:text-[36px] md:text-[44px]"
-            style={{ color: "#5f5146" }}
-          >
-            What I Can Do For Your Brand
-          </h2>
-          <p
-            className="mt-4 text-sm sm:text-base max-w-xl mx-auto leading-relaxed"
-            style={{ color: "#7a6a5a" }}
-          >
-            I create modern, clean and impactful design solutions that help your
+        <Title
+          head={"SERVICES"}
+          title={"What I Can Do For Your Brand"}
+          subtitle={` I create modern, clean and impactful design solutions that help your
             brand stand out, connect with audience and grow visually in a
-            competitive market.
-          </p>
-        </div>
+            competitive market.`}
+        />
 
         {/* GRID */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -73,54 +55,53 @@ const Services = () => {
               whileHover={{ scale: 1.05, rotate: -1 }}
               className="relative p-6 shadow-md cursor-pointer overflow-hidden"
               style={{
-                background: index % 2 === 0 ? "#f0e6dc" : "#e3d8cc",
-                borderRadius: "30px 10px 30px 10px", // 🔥 custom shape (not normal rounded)
+                background:
+                  index % 2 === 0 ? "var(--card-even)" : "var(--card-odd)",
+                borderRadius: "30px 10px 30px 10px",
               }}
             >
-              {/* soft glow background blob */}
-              <div
-                className="absolute -top-10 -right-10 w-28 h-28 rounded-full blur-3xl opacity-30"
-                style={{ background: "#ffffff" }}
-              />
+              {/* soft glow */}
+              <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full blur-3xl opacity-20 bg-white dark:bg-[#3a3128]" />
 
               {/* ICON */}
-              <div className="text-xl mb-4" style={{ color: "#5f5146" }}>
+              <div className="text-xl mb-4 text-[#5f5146] dark:text-[#d2c0ad]">
                 {item.icon}
               </div>
 
               {/* TITLE */}
-              <h3
-                className="font-semibold text-lg"
-                style={{ color: "#5f5146" }}
-              >
+              <h3 className="font-semibold text-lg text-[#5f5146] dark:text-[#f2e7da]">
                 {item.title}
               </h3>
-              <p
-                className="text-xs mb-1 opacity-70"
-                style={{ color: "#7a6a5a" }}
-              >
+
+              <p className="text-xs mb-1 opacity-70 text-[#7a6a5a] dark:text-[#b8a28d]">
                 {item.subtitle}
               </p>
 
               {/* DESC */}
-              <p
-                className="text-sm mt-2 leading-relaxed"
-                style={{ color: "#7a6a5a" }}
-              >
+              <p className="text-sm mt-2 leading-relaxed text-[#7a6a5a] dark:text-[#c4b19d]">
                 {item.desc}
               </p>
 
               {/* NUMBER */}
-              <span
-                className="absolute bottom-3 right-4 text-3xl font-bold opacity-10"
-                style={{ color: "#5f5146" }}
-              >
+              <span className="absolute bottom-3 right-4 text-3xl font-bold opacity-10 text-[#5f5146] dark:text-[#f2e7da]">
                 0{index + 1}
               </span>
             </motion.div>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        :root {
+          --card-even: #f0e6dc;
+          --card-odd: #e3d8cc;
+        }
+
+        .dark {
+          --card-even: #24201c;
+          --card-odd: #2a241f;
+        }
+      `}</style>
     </section>
   );
 };
