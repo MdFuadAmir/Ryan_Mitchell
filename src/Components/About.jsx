@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaPalette, FaLayerGroup, FaLightbulb } from "react-icons/fa";
-import owner from "../assets/owner.webP";
+import owner from "../assets/owner.webp";
 
 const About = () => {
   return (
