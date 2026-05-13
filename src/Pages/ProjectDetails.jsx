@@ -18,7 +18,7 @@ const ProjectDetails = () => {
   }
 
   return (
-    <section className="py-24 md:py-28 px-6 bg-[#f6efe7] dark:bg-[#181512] transition-colors duration-300">
+    <section className="py-24  px-6 bg-[#f6efe7] dark:bg-[#181512] transition-colors duration-300">
       <div className="max-w-5xl mx-auto space-y-10">
         {/* IMAGE */}
         <motion.img
