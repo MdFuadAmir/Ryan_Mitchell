@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useParams, Link } from "react-router";
-import projects from "../../public/Data/Projects";
+import projects from "../Data/Projects.js";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const ProjectDetails = () => {
@@ -10,6 +10,7 @@ const ProjectDetails = () => {
   const project = projects.find((p) => p.id === Number(id));
 
   if (!project) {
+
     return (
       <div className="min-h-screen flex items-center justify-center text-[#7a6a5a] dark:text-[#c4b19d]">
         No project found

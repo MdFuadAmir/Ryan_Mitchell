@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import projects from "../../public/Data/Projects";
+import projects from "../Data/Projects.js";
 import Title from "../Utils/Title";
 import { Link } from "react-router";
 

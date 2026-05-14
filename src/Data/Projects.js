@@ -1,9 +1,9 @@
-import img1 from "../../src/assets/Images/p1.webp";
-import img2 from "../../src/assets/Images/p2.webp";
-import img3 from "../../src/assets/Images/p3.webp";
-import img4 from "../../src/assets/Images/p6.webp";
-import img5 from "../../src/assets/Images/p5.webp";
-import img6 from "../../src/assets/Images/p4.webp";
+import img1 from "../assets/Images/p1.webp";
+import img2 from "../assets/Images/p2.webp";
+import img3 from "../assets/Images/p3.webp";
+import img4 from "../assets/Images/p6.webp";
+import img5 from "../assets/Images/p5.webp";
+import img6 from "../assets/Images/p4.webp";
 
 const  projects = [
   {
