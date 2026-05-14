@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
-import hero from "../assets/Images/p1.webP";
+import hero from "../assets/p1.webp";
 
 const Hero = () => {
   return (
