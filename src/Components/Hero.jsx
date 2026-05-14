@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
-import hero from "../assets/p1.webp";
 
 const Hero = () => {
   return (
@@ -18,7 +17,9 @@ const Hero = () => {
           {/* IMAGE BOX */}
           <div className="rounded-3xl shadow-md overflow-hidden bg-[#ebe2d8] dark:bg-[#24201c]">
             <img
-              src={hero}
+              src={
+                "https://res.cloudinary.com/dhogcaoxt/image/upload/v1778720403/p1_b2r4bj.jpg"
+              }
               alt="design"
               className="w-full h-full object-cover"
             />

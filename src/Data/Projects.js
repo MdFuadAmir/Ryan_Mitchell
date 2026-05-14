@@ -1,14 +1,7 @@
-import img1 from "../assets/p1.webp";
-import img2 from "../assets/p2.webp";
-import img3 from "../assets/p3.webp";
-import img4 from "../assets/p6.webp";
-import img5 from "../assets/p5.webp";
-import img6 from "../assets/p4.webp";
-
 const  projects = [
   {
     id: 1,
-    img: img1,
+    img: "https://res.cloudinary.com/dhogcaoxt/image/upload/v1778720403/p1_b2r4bj.jpg",
     title: "Brand Identity Design",
     category: "Logo & Branding",
     client: "NovaTech Studio",
@@ -30,7 +23,7 @@ const  projects = [
   },
   {
     id: 2,
-    img: img2,
+    img: "https://res.cloudinary.com/dhogcaoxt/image/upload/v1778720528/p2_pkkumx.jpg",
     title: "Social Media Campaign",
     category: "Marketing Design",
     client: "Glow Marketing Agency",
@@ -50,7 +43,7 @@ const  projects = [
   },
   {
     id: 3,
-    img: img3,
+    img: "https://res.cloudinary.com/dhogcaoxt/image/upload/v1778720539/p3_pgm5el.jpg",
     title: "Modern Logo Concept",
     category: "Logo Design",
     client: "Freelance Startup",
@@ -70,7 +63,7 @@ const  projects = [
   },
   {
     id: 4,
-    img: img4,
+    img: "https://res.cloudinary.com/dhogcaoxt/image/upload/v1778720551/p4_kalcqa.jpg",
     title: "Product Packaging Design",
     category: "Packaging Design",
     client: "Fresh Organics",
@@ -90,7 +83,7 @@ const  projects = [
   },
   {
     id: 5,
-    img: img5,
+    img: "https://res.cloudinary.com/dhogcaoxt/image/upload/v1778720556/p5_vfhian.jpg",
     title: "Creative Poster Design",
     category: "Print Design",
     client: "Event Hub BD",
@@ -110,7 +103,7 @@ const  projects = [
   },
   {
     id: 6,
-    img: img6,
+    img: "https://res.cloudinary.com/dhogcaoxt/image/upload/v1778720580/p6_wurrk6.jpg",
     title: "Digital Ads Design",
     category: "Advertising",
     client: "AdVision Agency",

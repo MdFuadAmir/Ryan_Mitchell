@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaPalette, FaLayerGroup, FaLightbulb } from "react-icons/fa";
-import owner from "../assets/owner.webp";
 
 const About = () => {
   return (
@@ -20,7 +19,9 @@ const About = () => {
           <div className="relative">
             <div className="w-64 h-80 sm:w-72 sm:h-80 md:w-80 md:h-110 rounded-3xl shadow-lg overflow-hidden bg-[#e3d8cc] dark:bg-[#24201c]">
               <img
-                src={owner}
+                src={
+                  "https://res.cloudinary.com/dhogcaoxt/image/upload/v1778720640/owner_qngzsk.png"
+                }
                 alt="owner"
                 className="w-full h-full object-cover"
               />
